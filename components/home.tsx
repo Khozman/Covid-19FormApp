@@ -10,7 +10,7 @@ export const Home = ({ navigation }: any) => {
     </View>
 
     <View>
-        <TouchableOpacity onPress={() => navigation.navigate('SymptomCard1')} style={styles.button}>
+        <TouchableOpacity onPress={() => navigation.navigate('Pager')} style={styles.button}>
             <Text style={styles.text}>Symptom Monitoring Form </Text>
         </TouchableOpacity>
     </View>

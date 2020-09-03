@@ -17,6 +17,7 @@ import { Card2 } from './components/card2';
 import { Card3 } from './components/card3';
 import { Card4 } from './components/card4';
 import { Successful } from './components/successful';
+import { Pager } from './components/pager';
 
 
 function HomeScreen() {
@@ -34,6 +35,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Pager" component={Pager} />
         <Stack.Screen name="SymptomCard1" component={SymptomCard1} />
         <Stack.Screen name="SymptomCard2" component={SymptomCard2} />
         <Stack.Screen name="SymptomCard3" component={SymptomCard3} />

@@ -1,92 +1,87 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CardView from 'react-native-cardview';
-import {Text, TextInput, TouchableOpacity} from 'react-native';
-import { styles } from '../style';
-import ToggleSwitch from 'rn-toggle-switch';
+import { Text, TextInput, TouchableOpacity, View } from 'react-native';
+import ToggleSwitch2 from 'toggle-switch-react-native'
 export const SymptomCard6 = ({ navigation }: any) => {
-   
-return(<CardView
-    cardElevation={2}
-    cardMaxElevation={2}
-    cornerRadius={5}
-    style={{flex:1, margin:16}}>
-            <Text >Chills</Text>
+    const [hasChills, setHasChills] = useState<boolean>(false);
+    const [hasShortnessOfBreath, setHasShortnessOfBreath] = useState<boolean>(false);
+    const [hasRednessOfTheEyes, setHasRednessOfTheEyes] = useState<boolean>(false);
+    const [hasNauseaVomitingOrDiarrhoea, setHasNauseaVomitingOrDiarrhoea] = useState<boolean>(false);
+    const [hasFatigueOrWeakness, setHasFatigueOrWeakness] = useState<boolean>(false);
 
-            <ToggleSwitch
-                text={{on: 'YES', off: 'NO', activeTextColor: 'white', inactiveTextColor: '#B7B8BA'}}
-                textStyle={{fontWeight: 'bold'}}
-                color={{ indicator: 'white', active: '#18D5ff', inactive: 'rgba(247, 247, 247, 1)', activeBorder: '#18D5ff', inactiveBorder: '#E9E9E9'}}
-                active={true}
-                disabled={false}
-                width={80}
-                radius={25}
-                onValueChange={(val) => {
-                    /*Handler function*/ 
-                }}
-                />
+    return (<CardView
+        cardElevation={2}
+        cardMaxElevation={2}
+        cornerRadius={5}
+        style={{ margin: 16, padding: 16 }}>
 
-            <Text >Shortness of breath</Text>
+        <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'left' }} >Symptoms</Text>
 
-            <ToggleSwitch
-                text={{on: 'YES', off: 'NO', activeTextColor: 'white', inactiveTextColor: '#B7B8BA'}}
-                textStyle={{fontWeight: 'bold'}}
-                color={{ indicator: 'white', active: '#18D5ff', inactive: 'rgba(247, 247, 247, 1)', activeBorder: '#18D5ff', inactiveBorder: '#E9E9E9'}}
-                active={true}
-                disabled={false}
-                width={80}
-                radius={25}
-                onValueChange={(val) => {
-                    /*Handler function*/ 
-                }}
-                />
+        <View style={{ marginVertical: 8 }} >
+            <ToggleSwitch2
+                isOn={hasChills}
+                onColor="green"
+                offColor="red"
+                label="Chills"
+                labelStyle={{ color: "black", fontWeight: "900", fontSize: 18, marginVertical: 8, flex: 1 }}
+                size='large'
+                onToggle={isOn => setHasChills(isOn)}
+            />
+        </View>
 
-            <Text >Redness of the eyes</Text>
+        <View style={{ marginVertical: 8 }} >
+            <ToggleSwitch2
+                isOn={hasShortnessOfBreath}
+                onColor="green"
+                offColor="red"
+                label="Shortness of breath"
+                labelStyle={{ color: "black", fontWeight: "900", fontSize: 18, marginVertical: 8, flex: 1 }}
+                size='large'
+                onToggle={isOn => setHasShortnessOfBreath(isOn)}
+            />
+        </View>
 
-            <ToggleSwitch
-                text={{on: 'YES', off: 'NO', activeTextColor: 'white', inactiveTextColor: '#B7B8BA'}}
-                textStyle={{fontWeight: 'bold'}}
-                color={{ indicator: 'white', active: '#18D5ff', inactive: 'rgba(247, 247, 247, 1)', activeBorder: '#18D5ff', inactiveBorder: '#E9E9E9'}}
-                active={true}
-                disabled={false}
-                width={80}
-                radius={25}
-                onValueChange={(val) => {
-                    /*Handler function*/ 
-                }}
-                />
+        <View style={{ marginVertical: 8 }} >
+            <ToggleSwitch2
+                isOn={hasRednessOfTheEyes}
+                onColor="green"
+                offColor="red"
+                label="Redness of the eyes"
+                labelStyle={{ color: "black", fontWeight: "900", fontSize: 18, marginVertical: 8, flex: 1 }}
+                size='large'
+                onToggle={isOn => setHasRednessOfTheEyes(isOn)}
+            />
+        </View>
 
-            <Text >Nausea / vomiting / diarrhoea</Text>
+        <View style={{ marginVertical: 8 }} >
+            <ToggleSwitch2
+                isOn={hasNauseaVomitingOrDiarrhoea}
+                onColor="green"
+                offColor="red"
+                label="Nausea / vomiting / diarrhoea"
+                labelStyle={{ color: "black", fontWeight: "900", fontSize: 18, marginVertical: 8, flex: 1 }}
+                size='large'
+                onToggle={isOn => setHasNauseaVomitingOrDiarrhoea(isOn)}
+            />
+        </View>
 
-            <ToggleSwitch
-                text={{on: 'YES', off: 'NO', activeTextColor: 'white', inactiveTextColor: '#B7B8BA'}}
-                textStyle={{fontWeight: 'bold'}}
-                color={{ indicator: 'white', active: '#18D5ff', inactive: 'rgba(247, 247, 247, 1)', activeBorder: '#18D5ff', inactiveBorder: '#E9E9E9'}}
-                active={true}
-                disabled={false}
-                width={80}
-                radius={25}
-                onValueChange={(val) => {
-                    /*Handler function*/ 
-                }}
-                />
+        <View style={{ marginVertical: 8 }} >
+            <ToggleSwitch2
+                isOn={hasFatigueOrWeakness}
+                onColor="green"
+                offColor="red"
+                label="Fatigue / weakness"
+                labelStyle={{ color: "black", fontWeight: "900", fontSize: 18, marginVertical: 8, flex: 1 }}
+                size='large'
+                onToggle={isOn => setHasFatigueOrWeakness(isOn)}
+            />
+        </View>
 
-            <Text >Fatigue / weakness</Text>
-
-            <ToggleSwitch
-                text={{on: 'YES', off: 'NO', activeTextColor: 'white', inactiveTextColor: '#B7B8BA'}}
-                textStyle={{fontWeight: 'bold'}}
-                color={{ indicator: 'white', active: '#18D5ff', inactive: 'rgba(247, 247, 247, 1)', activeBorder: '#18D5ff', inactiveBorder: '#E9E9E9'}}
-                active={true}
-                disabled={false}
-                width={80}
-                radius={25}
-                onValueChange={(val) => {
-                    /*Handler function*/ 
-                }}
-                />
-
-            <TouchableOpacity style={{  padding: 16, backgroundColor: '#18D5ff', margin:8, borderRadius:12 } } onPress={()=>navigation.navigate('SymptomCard7')}>
-                <Text style={{color:'#fff',textAlign:'center'}}>Next</Text>
-            </TouchableOpacity>
-</CardView>);
+        <TouchableOpacity style={{ padding: 16, backgroundColor: '#18D5ff', margin: 8, borderRadius: 12 }} onPress={() => navigation.navigate('SymptomCard7')}>
+            <Text style={{ color: '#fff', textAlign: 'center' }}>Next</Text>
+        </TouchableOpacity>
+    </CardView>);
 }
+// const styles = StyleSheet.create({
+//     row: { marginVertical: 8 }
+// })
